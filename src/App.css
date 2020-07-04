@@ -1,3 +1,8 @@
 .App {
-    margin: 25px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom right, rgb(46, 245, 222), rgb(65, 223, 224), rgb(84, 200, 226), rgb(103, 178, 227), rgb(122, 156, 229), rgb(141, 134, 231), rgb(160, 111, 233), rgb(179, 89, 235), rgb(198, 67, 237), rgb(217, 45, 238), rgb(236, 22, 240), rgb(255, 0, 242));
 }

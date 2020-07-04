@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import s from './Tasks.module.css';
+import {ButtonNya} from "../common/MyButton";
 
 
 
@@ -12,40 +13,44 @@ function Tasks() {
         {id: 4, n: "HTML", p: "low" },
     ])
 
-    function RemuveTask(id:number) {
+    function RemoveTask(id:number) {
         let filterTasks = arr.filter(t => t.id != id)
         setArr(filterTasks)
     }
 
     let [filter, setFilter] = useState<'High' | "Middle" | "Low" | "All">("All")
 
-
+    let newArr = arr
 
     if (filter === 'High'){
-        arr = arr.filter(t => t.p === 'High')
+        newArr = arr.filter(t => t.p === 'High')
     }
     if (filter === 'Middle'){
-        arr = arr.filter(t => t.p === 'Middle')
+        newArr = arr.filter(t => t.p === 'Middle')
     }
     if (filter === 'Low'){
-        arr = arr.filter(t => t.p === 'low')
+        newArr = arr.filter(t => t.p === 'low')
     }
-  if (filter === 'All'){
-        arr = arr
+    if (filter === 'All'){
+        newArr = arr
     }
 
-    function cangeFilder(value: 'High' | "Middle" | "Low" | "All" ) {
+     function changeFilter(value: 'High' | "Middle" | "Low" | "All" ) {
         setFilter(value)
     }
 
-    const listItem = arr.map((el) => <li key={el.id.toString()}>{el.n}
-            <button onClick={() => {RemuveTask(el.id)}}>x</button></li>)
+    const listItem = newArr.map((el) =>
+        <li key={el.id.toString()}>{el.n}
+
+            <ButtonNya onClick={() => {RemoveTask(el.id)}} btnName={'x'} btnType={'red'}/>
+        </li>)
 
     const btnFilter = <div className={s.btnFilter}>
-        <button onClick={() => {cangeFilder('High')}}>High</button>
-        <button onClick={() => {cangeFilder('Middle')}}>Middle</button>
-        <button onClick={() => {cangeFilder('Low')}}>Low</button>
-        <button onClick={() => {cangeFilder('All')}}>All</button>
+
+        <ButtonNya onClick={() => {changeFilter('High')}} btnName={'High'} btnType={'classic'}/>
+        <ButtonNya onClick={() => {changeFilter('Middle')}} btnName={'Middle'} btnType={'classic'}/>
+        <ButtonNya onClick={() => {changeFilter('Low')}} btnName={'Low'} btnType={'classic'}/>
+        <ButtonNya onClick={() => {changeFilter('All')}} btnName={'All'} btnType={'classic'}/>
     </div>
 
     return (

@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import s from './Input.module.css';
 import {v1} from "uuid";
+import { MyInput } from "../common/MyInput";
+import { ButtonNya } from "../common/MyButton";
 
 type NameType = {
     name: string,
@@ -20,15 +22,24 @@ function Input() {
         }
     }
 
+    const onChangeHandler = (e:any) => {setNames(e.currentTarget.value)}
+    const onKeyPressHandler = (e: any) => { if (e.charCode === 13){hiPeople()}}
+
 
     return (
         <div className={s.inputItem}>
-            <input
+            {/*<input*/}
+            {/*    value={names}*/}
+            {/*    onChange={onChangeHandler}*/}
+            {/*    onKeyPress={onKeyPressHandler}*/}
+            {/*/>*/}
+            <MyInput
                 value={names}
-                onChange={(e) => {setNames(e.currentTarget.value)}}
-                onKeyPress={(e) => { if (e.charCode === 13){hiPeople()}}}
+                onChange={onChangeHandler}
+                onKeyPress={onKeyPressHandler}
             />
-            <button onClick={hiPeople}>+</button>
+            {/*<button onClick={hiPeople}>+</button>*/}
+            <ButtonNya onClick={hiPeople} btnName={'+'} btnType={'classic'}/>
             <span>{sum.length}</span>
         </div>
     )
