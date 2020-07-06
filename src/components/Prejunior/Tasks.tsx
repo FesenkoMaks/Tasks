@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import s from './Tasks.module.css';
-import {ButtonNya} from "../common/MyButton";
+import {ButtonNya} from "../../common/MyButton";
 
 
 

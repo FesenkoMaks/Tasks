@@ -16,9 +16,9 @@ function Menu() {
 
         <div className={s.menu}>
             <button className={s.menuBtn} onClick={hiddenMenu}>Menu</button>
-            <div className={isHidden ? s.menuHidden : s.menuItems} ><NavLink to={'/TaskOneFour'} activeClassName={s.isActive}> Prejunior </NavLink></div>
+            <div className={isHidden ? s.menuHidden : s.menuItems} ><NavLink to={'/Prejunior'} activeClassName={s.isActive}> Prejunior </NavLink></div>
             <div
-                className={isHidden ? s.menuHidden : s.menuItems}><NavLink to={'/2'} activeClassName={s.isActive}> junior </NavLink></div>
+                className={isHidden ? s.menuHidden : s.menuItems}><NavLink to={'/Junior'} activeClassName={s.isActive}> junior </NavLink></div>
             <div className={isHidden ? s.menuHidden : s.menuItems}><NavLink to={'/3'} activeClassName={s.isActive}> junior+ </NavLink></div>
         </div>
 

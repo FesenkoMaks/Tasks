@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import s from './Input.module.css';
 import {v1} from "uuid";
-import { MyInput } from "../common/MyInput";
-import { ButtonNya } from "../common/MyButton";
+import { MyInput } from "../../common/MyInput";
+import { ButtonNya } from "../../common/MyButton";
 
 type NameType = {
     name: string,
