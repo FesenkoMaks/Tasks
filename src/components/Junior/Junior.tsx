@@ -3,6 +3,9 @@ import EditableSpan from "../../common/EditableSpan";
 
 import s from "./Junior.module.css"
 import {ButtonNya} from "../../common/MyButton";
+import MySelect from "../../common/MySelect";
+import Radio from "../../common/Radio";
+
 
 export function saveState<T> (key: string, state: T) {
     const stateAsString = JSON.stringify(state);
@@ -49,6 +52,16 @@ function Junior() {
                    <ButtonNya btnName={'Save'} btnType={'classic'} onClick={() => saveState('test', title)}/>
                    <ButtonNya btnName={'Return'} btnType={'classic'} onClick={() => setTitle(restoreState('test', title))}/>
                 </div>
+                <MySelect items={[
+                    {title: 'Minsk', value: '1'},
+                    {title: 'Moscow', value: '2'},
+                    {title: 'Kiev', value: '3'},
+                ]}/>
+                <Radio items={[
+                    {title: 'Minsk', value: '1'},
+                    {title: 'Moscow', value: '2'},
+                    {title: 'Kiev', value: '3'},
+                ]}/>
 
         </div>
     )
