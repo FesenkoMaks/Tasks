@@ -8,15 +8,15 @@ import Junior from './components/Junior/Junior';
 
 
 function App() {
-  return (
-      <HashRouter>
-    <div className="App">
-        <Menu/>
-        <Route path={'/Prejunior'} component={OneFour}/>
-        <Route path={'/Junior'} component={Junior}/>
-    </div>
-      </HashRouter>
-  );
+    return (
+        <HashRouter>
+            <div className="App">
+                <Menu/>
+                <Route path={'/Prejunior'} component={OneFour}/>
+                <Route path={'/Junior'} component={Junior}/>
+            </div>
+        </HashRouter>
+    );
 }
 
 export default App;

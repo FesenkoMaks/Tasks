@@ -41,14 +41,17 @@ function Junior() {
     }
 
 
+    let [value, setValue] = useState('1')
+    const changeValue = (event: ChangeEvent<HTMLInputElement>) => {
+        setValue(event.currentTarget.value)
+    }
+
 
     return (
         <div className={s.junior}>
             <EditableSpan title={title} saveTitle={changeTitle}/>
 
                <div>
-                    {/*<button onClick={() => saveState('test', title)}>Save</button>*/}
-                    {/*<button onClick={() => setTitle(restoreState('test', title))}>Return</button>*/}
                    <ButtonNya btnName={'Save'} btnType={'classic'} onClick={() => saveState('test', title)}/>
                    <ButtonNya btnName={'Return'} btnType={'classic'} onClick={() => setTitle(restoreState('test', title))}/>
                 </div>
@@ -57,7 +60,11 @@ function Junior() {
                     {title: 'Moscow', value: '2'},
                     {title: 'Kiev', value: '3'},
                 ]}/>
-                <Radio items={[
+                <Radio
+                    onChange={changeValue}
+                    value={value}
+                    name={'city'}
+                    items={[
                     {title: 'Minsk', value: '1'},
                     {title: 'Moscow', value: '2'},
                     {title: 'Kiev', value: '3'},
